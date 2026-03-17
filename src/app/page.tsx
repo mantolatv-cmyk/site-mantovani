@@ -1,7 +1,31 @@
-import { Phone } from 'lucide-react';
+'use client';
+
+import { useState } from 'react';
+import { Phone, CheckCircle2, Loader2 } from 'lucide-react';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 export default function Home() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    // Simular envio
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setSubmitted(true);
+    }, 1500);
+  };
+
+  const fadeIn = {
+    initial: { opacity: 0, y: 20 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true },
+    transition: { duration: 0.6 }
+  };
+
   return (
     <main className="min-h-screen bg-zinc-900 text-zinc-100 font-sans">
       {/* Header/Nav Placeholder */}
@@ -25,7 +49,12 @@ export default function Home() {
       <section id="inicio" className="relative py-20 lg:py-32 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
+            <motion.div 
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+
               <span className="inline-block py-1 px-3 rounded-full bg-yellow-500/10 text-yellow-500 text-xs font-bold uppercase tracking-widest mb-6">
                 Líder em Locação de Betoneiras
               </span>
@@ -46,16 +75,26 @@ export default function Home() {
                   Ver Catálogo
                 </button>
               </div>
-            </div>
+            </motion.div>
 
             {/* Image Placeholder */}
-            <div className="relative">
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1 }}
+              className="relative"
+            >
               <div className="aspect-square bg-zinc-800 rounded-2xl relative overflow-hidden flex items-center justify-center group border border-zinc-700">
                 <Image src="/hero_betoneira.png" alt="Betoneira de alta performance" fill className="object-cover group-hover:scale-105 transition-transform duration-700" priority />
                 <div className="absolute inset-0 bg-gradient-to-tr from-yellow-500/20 to-transparent mix-blend-overlay"></div>
               </div>
               {/* Floating badge */}
-              <div className="absolute -bottom-6 -left-6 bg-zinc-900 border border-zinc-800 p-6 rounded-xl shadow-2xl flex items-center gap-4 max-w-xs">
+              <motion.div 
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.5 }}
+                className="absolute -bottom-6 -left-6 bg-zinc-900 border border-zinc-800 p-6 rounded-xl shadow-2xl flex items-center gap-4 max-w-xs"
+              >
                 <div className="w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-500">
                   ⚡
                 </div>
@@ -63,8 +102,8 @@ export default function Home() {
                   <p className="font-bold text-sm">Pronta Entrega</p>
                   <p className="text-xs text-zinc-500">Equipamentos revisados hoje.</p>
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -72,10 +111,10 @@ export default function Home() {
       {/* Differentials Grid */}
       <section className="py-24 bg-zinc-950 border-y border-zinc-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <motion.div {...fadeIn} className="text-center mb-16">
             <h2 className="text-3xl font-black uppercase italic mb-4">Por que escolher a <span className="text-yellow-500">Mantovani?</span></h2>
             <div className="w-20 h-1.5 bg-yellow-500 mx-auto"></div>
-          </div>
+          </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
@@ -83,14 +122,21 @@ export default function Home() {
               { title: "Entrega Rápida", desc: "Logística própria para garantir que a betoneira chegue no canteiro no momento planejado.", icon: "🚚" },
               { title: "Suporte Técnico", desc: "Equipe especializada pronta para resolver qualquer imprevisto diretamente na sua obra.", icon: "👷" }
             ].map((item, i) => (
-              <div key={i} className="bg-zinc-900 p-8 border border-zinc-800 hover:border-yellow-500/50 transition-colors group relative overflow-hidden">
+              <motion.div 
+                key={i} 
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-zinc-900 p-8 border border-zinc-800 hover:border-yellow-500/50 transition-colors group relative overflow-hidden"
+              >
                 <div className="absolute top-0 right-0 w-16 h-16 bg-yellow-500/5 -rotate-45 translate-x-8 -translate-y-8"></div>
                 <div className="text-4xl mb-6">{item.icon}</div>
                 <h3 className="text-xl font-bold mb-4 uppercase text-yellow-500">{item.title}</h3>
                 <p className="text-zinc-500 leading-relaxed">
                   {item.desc}
                 </p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -216,37 +262,74 @@ export default function Home() {
             </div>
             
             {/* Form */}
-            <div className="bg-zinc-950 p-8 lg:p-10 rounded-sm border border-zinc-800">
+            <motion.div 
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="bg-zinc-950 p-8 lg:p-10 rounded-sm border border-zinc-800"
+            >
               <h3 className="text-xl font-bold uppercase mb-8 border-b border-zinc-800 pb-4">Solicite um Orçamento</h3>
-              <form className="space-y-4">
-                <div>
-                  <label className="block text-xs font-bold uppercase text-zinc-500 mb-2">Seu Nome</label>
-                  <input type="text" className="w-full bg-zinc-900 border border-zinc-800 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-yellow-500 transition-colors" placeholder="João da Silva" />
+              
+              {submitted ? (
+                <div className="py-12 text-center">
+                  <motion.div 
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    className="w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center mx-auto mb-6"
+                  >
+                    <CheckCircle2 size={32} className="text-black" />
+                  </motion.div>
+                  <h4 className="text-2xl font-bold mb-2 uppercase">Solicitação Enviada!</h4>
+                  <p className="text-zinc-500 mb-8">Nossa equipe entrará em contato em breve através do seu telefone.</p>
+                  <button 
+                    onClick={() => setSubmitted(false)}
+                    className="text-yellow-500 font-bold uppercase text-xs tracking-widest hover:underline"
+                  >
+                    Enviar outra mensagem
+                  </button>
                 </div>
-                <div className="grid grid-cols-2 gap-4">
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
-                    <label className="block text-xs font-bold uppercase text-zinc-500 mb-2">Telefone</label>
-                    <input type="text" className="w-full bg-zinc-900 border border-zinc-800 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-yellow-500 transition-colors" placeholder="(11) 90000-0000" />
+                    <label className="block text-xs font-bold uppercase text-zinc-500 mb-2">Seu Nome</label>
+                    <input required type="text" className="w-full bg-zinc-900 border border-zinc-800 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-yellow-500 transition-colors" placeholder="João da Silva" />
+                  </div>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-xs font-bold uppercase text-zinc-500 mb-2">Telefone</label>
+                      <input required type="tel" className="w-full bg-zinc-900 border border-zinc-800 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-yellow-500 transition-colors" placeholder="(11) 90000-0000" />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-bold uppercase text-zinc-500 mb-2">Equipamento</label>
+                      <select required className="w-full bg-zinc-900 border border-zinc-800 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-yellow-500 transition-colors appearance-none scrollbar-hide">
+                        <option value="betoneira-400">Betoneira 400L</option>
+                        <option value="rompedor">Rompedor 20kg</option>
+                        <option value="placa">Placa Vibratória</option>
+                        <option value="outros">Outros</option>
+                      </select>
+                    </div>
                   </div>
                   <div>
-                    <label className="block text-xs font-bold uppercase text-zinc-500 mb-2">Equipamento</label>
-                    <select className="w-full bg-zinc-900 border border-zinc-800 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-yellow-500 transition-colors appearance-none">
-                      <option>Betoneira 400L</option>
-                      <option>Betoneira 250L</option>
-                      <option>Betoneira 600L</option>
-                      <option>Outros</option>
-                    </select>
+                    <label className="block text-xs font-bold uppercase text-zinc-500 mb-2">Mensagem (Opcional)</label>
+                    <textarea rows={3} className="w-full bg-zinc-900 border border-zinc-800 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-yellow-500 transition-colors resize-none" placeholder="Detalhes do projeto, prazo de locação..."></textarea>
                   </div>
-                </div>
-                <div>
-                  <label className="block text-xs font-bold uppercase text-zinc-500 mb-2">Mensagem (Opcional)</label>
-                  <textarea rows={3} className="w-full bg-zinc-900 border border-zinc-800 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-yellow-500 transition-colors resize-none" placeholder="Detalhes do projeto, prazo de locação..."></textarea>
-                </div>
-                <button type="button" className="w-full bg-yellow-500 hover:bg-yellow-400 text-zinc-900 py-4 font-black uppercase rounded-sm transition-colors mt-2">
-                  Enviar Solicitação
-                </button>
-              </form>
-            </div>
+                  <button 
+                    disabled={isSubmitting}
+                    type="submit" 
+                    className="w-full bg-yellow-500 hover:bg-yellow-400 disabled:bg-zinc-700 disabled:cursor-not-allowed text-zinc-900 py-4 font-black uppercase rounded-sm transition-all mt-2 flex items-center justify-center gap-2"
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="animate-spin" size={20} />
+                        Enviando...
+                      </>
+                    ) : (
+                      'Enviar Solicitação'
+                    )}
+                  </button>
+                </form>
+              )}
+            </motion.div>
           </div>
         </div>
       </section>
