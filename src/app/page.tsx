@@ -159,7 +159,9 @@ export default function Home() {
                   </div>
                   <div>
                     <h4 className="text-sm font-bold uppercase text-zinc-500 mb-1">WhatsApp & Ligações</h4>
-                    <p className="text-xl font-bold">(11) 99999-9999</p>
+                    <a href="https://wa.me/5511999408103" target="_blank" rel="noopener noreferrer" className="text-xl font-bold hover:text-yellow-500 transition-colors">
+                      (11) 99940-8103
+                    </a>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -168,7 +170,9 @@ export default function Home() {
                   </div>
                   <div>
                     <h4 className="text-sm font-bold uppercase text-zinc-500 mb-1">E-mail</h4>
-                    <p className="text-xl font-bold break-all">contato@betoneirasmantovani.com.br</p>
+                    <a href="mailto:betoneirasmantovani@terra.com.br" className="text-xl font-bold break-all hover:text-yellow-500 transition-colors">
+                      betoneirasmantovani@terra.com.br
+                    </a>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -177,7 +181,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h4 className="text-sm font-bold uppercase text-zinc-500 mb-1">Localização</h4>
-                    <p className="text-xl font-bold">Av. das Construções, 1000 - SP</p>
+                    <p className="text-xl font-bold">Avenida São João, 1601 - Bairro da Ponte</p>
                   </div>
                 </div>
               </div>
