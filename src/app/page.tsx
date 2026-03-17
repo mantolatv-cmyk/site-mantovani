@@ -104,12 +104,9 @@ export default function Home() {
               <h2 className="text-3xl lg:text-5xl font-black uppercase italic mb-4">Nossa <span className="text-yellow-500">Frota</span></h2>
               <p className="text-zinc-400 max-w-md">Soluções ideais para pequeno, médio e grande porte. Equipamentos robustos e revisados.</p>
             </div>
-            <button className="hidden md:flex border border-zinc-700 hover:border-yellow-500 text-sm font-bold uppercase px-6 py-3 rounded-sm transition-colors text-zinc-300 hover:text-yellow-500">
-              Ver Catálogo Completo
-            </button>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
             {[
               { name: "Betoneira 400L", desc: "A mais procurada. Ideal para fundações e lajes de médio porte.", cap: "400 Litros", img: "/betoneira_400l.png" },
               { name: "Betoneira 250L", desc: "Perfeita para reformas e construções menores. Alta mobilidade.", cap: "250 Litros", img: "/betoneira_250l.png" },
@@ -137,6 +134,37 @@ export default function Home() {
                 </button>
               </div>
             ))}
+          </div>
+
+          <div className="border-t border-zinc-800 pt-20">
+            <div className="mb-16 text-center">
+              <h3 className="text-2xl lg:text-4xl font-black uppercase italic mb-4">Catálogo de <span className="text-yellow-500">Ferramentas</span></h3>
+              <p className="text-zinc-500">Equipamentos auxiliares para todas as etapas da sua construção.</p>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {[
+                { name: "Rompedor", desc: "Demolição eficiente em concreto e asfalto." },
+                { name: "Placa Vibratória", desc: "Compactação de solos granulares e asfalto." },
+                { name: "Cortadora de Piso", desc: "Cortes precisos em concreto e asfalto." },
+                { name: "Compactador", desc: "Alta força de impacto para solos coesivos." },
+                { name: "Alisadora de Concreto", desc: "Acabamento perfeito em pisos industriais." },
+                { name: "Furadeira de Impacto", desc: "Perfuração em alvenaria e concreto." },
+                { name: "Lixadeira", desc: "Preparação e acabamento de superfícies." },
+                { name: "Esmerilhadeira", desc: "Corte e desbaste de metais e materiais de construção." }
+              ].map((tool, i) => (
+                <div key={i} className="bg-zinc-900/50 border border-zinc-800 p-6 rounded-sm hover:bg-zinc-900 transition-all group">
+                  <div className="w-12 h-12 bg-zinc-800 flex items-center justify-center mb-6 text-yellow-500 font-bold group-hover:bg-yellow-500 group-hover:text-zinc-900 transition-colors">
+                    {i + 1}
+                  </div>
+                  <h4 className="font-bold uppercase mb-2 group-hover:text-yellow-500 transition-colors">{tool.name}</h4>
+                  <p className="text-zinc-500 text-xs mb-6 leading-relaxed">{tool.desc}</p>
+                  <button className="text-[10px] font-black uppercase tracking-widest text-zinc-400 group-hover:text-yellow-500 flex items-center gap-2">
+                    Consultar Aluguel <span>→</span>
+                  </button>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
