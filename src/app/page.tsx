@@ -252,13 +252,83 @@ export default function Home() {
       </section>
 
       {/* Footer section */}
-      <footer className="py-12 border-t border-zinc-800">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <p className="text-zinc-600 text-sm italic">
-            © 2026 Betoneiras Mantovani. Força Bruta para Grandes Construções.
-          </p>
+      <footer className="bg-black border-t border-zinc-900 pt-16 pb-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+            <div className="col-span-1 md:col-span-2">
+              <div className="flex items-center gap-2 mb-6">
+                <div className="w-10 h-10 bg-yellow-500 flex items-center justify-center rounded-sm">
+                  <span className="text-black font-black text-xl">M</span>
+                </div>
+                <span className="font-bold text-xl tracking-tighter uppercase">Betoneiras <span className="text-yellow-500">Mantovani</span></span>
+              </div>
+              <p className="text-zinc-500 text-sm leading-relaxed max-w-sm">
+                Líder em locação de equipamentos para construção civil em São Paulo. 
+                Força brutal, manutenção rigorosa e compromisso com o prazo da sua obra.
+              </p>
+            </div>
+            
+            <div>
+              <h4 className="font-bold uppercase text-sm tracking-widest mb-6 text-yellow-500">Navegação</h4>
+              <ul className="space-y-4 text-sm text-zinc-400">
+                <li><a href="#inicio" className="hover:text-white transition-colors">Início</a></li>
+                <li><a href="#equipamentos" className="hover:text-white transition-colors">Equipamentos</a></li>
+                <li><a href="#contato" className="hover:text-white transition-colors">Solicitar Orçamento</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-bold uppercase text-sm tracking-widest mb-6 text-yellow-500">Atendimento</h4>
+              <ul className="space-y-4 text-sm text-zinc-400">
+                <li className="flex flex-col">
+                  <span className="text-zinc-600 text-xs font-bold uppercase mb-1">Telefone</span>
+                  <a href="tel:11999408103" className="hover:text-white">(11) 99940-8103</a>
+                </li>
+                <li className="flex flex-col">
+                  <span className="text-zinc-600 text-xs font-bold uppercase mb-1">E-mail</span>
+                  <a href="mailto:betoneirasmantovani@terra.com.br" className="hover:text-white">betoneirasmantovani@terra.com.br</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          
+          <div className="border-t border-zinc-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-zinc-600 text-[10px] uppercase tracking-widest">
+              © 2026 Betoneiras Mantovani. Todos os direitos reservados.
+            </p>
+            <div className="flex gap-6">
+              <p className="text-zinc-600 text-[10px] uppercase tracking-widest hover:text-zinc-400 cursor-pointer transition-colors">Políticas de Privacidade</p>
+              <p className="text-zinc-600 text-[10px] uppercase tracking-widest hover:text-zinc-400 cursor-pointer transition-colors">Termos de Uso</p>
+            </div>
+          </div>
         </div>
       </footer>
+
+      {/* Botão Flutuante de WhatsApp */}
+      <a 
+        href="https://wa.me/5511999408103" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="fixed bottom-8 right-8 z-[100] bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all group"
+        aria-label="Falar no WhatsApp"
+      >
+        <div className="absolute -top-12 right-0 bg-white text-black text-xs font-bold px-3 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-xl pointer-events-none">
+          Precisa de ajuda? 🏗️
+          <div className="absolute bottom-[-6px] right-5 w-3 h-3 bg-white rotate-45"></div>
+        </div>
+        <svg 
+          viewBox="0 0 24 24" 
+          width="32" 
+          height="32" 
+          stroke="currentColor" 
+          strokeWidth="2" 
+          fill="none" 
+          strokeLinecap="round" 
+          strokeLinejoin="round"
+        >
+          <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+        </svg>
+      </a>
     </main>
   );
 }
