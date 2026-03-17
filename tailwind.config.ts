@@ -10,12 +10,13 @@ const config: Config = {
     extend: {
       colors: {
         yellow: {
-          500: "#EAB308", // Construction Yellow
-          400: "#FACC15",
+          500: "#FFC107", // Amarelo mais forte/vibrante
+          400: "#FFD54F",
         },
         zinc: {
-          900: "#18181B", // Industrial Black
-          950: "#09090B",
+          800: "#1A1A1A", // Bordas sutis no preto
+          900: "#0A0A0A", // Preto bem escuro
+          950: "#000000", // Preto puro
         },
       },
     },

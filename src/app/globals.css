@@ -4,8 +4,8 @@
 
 :root {
   --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 24, 24, 27; /* Zinc-900 */
-  --background-end-rgb: 9, 9, 11;     /* Zinc-950 */
+  --background-start-rgb: 10, 10, 10; /* Novo Zinc-900 (Preto bem escuro) */
+  --background-end-rgb: 0, 0, 0;      /* Novo Zinc-950 (Preto absoluto) */
 }
 
 body {
