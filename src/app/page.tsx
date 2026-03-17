@@ -108,9 +108,9 @@ export default function Home() {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
             {[
-              { name: "Betoneira 400L", desc: "A mais procurada. Ideal para fundações e lajes de médio porte.", cap: "400 Litros", img: "/betoneira_400l.png" },
-              { name: "Betoneira 250L", desc: "Perfeita para reformas e construções menores. Alta mobilidade.", cap: "250 Litros", img: "/betoneira_250l.png" },
-              { name: "Betoneira 600L", desc: "Para grandes obras que exigem alto volume de concreto rápido.", cap: "600 Litros", img: null }
+              { name: "Betoneira 400L", desc: "A mais procurada. Ideal para fundações e lajes de médio porte. Marca Menegotti.", cap: "400 Litros", img: "/betoneira_400l.png" },
+              { name: "Rompedor 20kg", desc: "Alta produtividade para demolição de pisos e lajes de concreto.", cap: "20 KG", img: null },
+              { name: "Placa Vibratória", desc: "Ideal para compactação de solos granulares e asfalto.", cap: "Frente Reversível", img: null }
             ].map((maq, i) => (
               <div key={i} className="bg-zinc-900 border border-zinc-800 rounded-sm p-6 group hover:border-yellow-500/50 transition-all-custom flex flex-col h-full">
                 <div className="aspect-video bg-zinc-950 rounded-sm mb-6 flex items-center justify-center border border-zinc-800/50 relative overflow-hidden">
