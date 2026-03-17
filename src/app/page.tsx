@@ -1,4 +1,5 @@
 import { Phone } from 'lucide-react';
+import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -50,12 +51,8 @@ export default function Home() {
             {/* Image Placeholder */}
             <div className="relative">
               <div className="aspect-square bg-zinc-800 rounded-2xl relative overflow-hidden flex items-center justify-center group border border-zinc-700">
-                <div className="absolute inset-0 bg-gradient-to-tr from-yellow-500/10 to-transparent"></div>
-                <div className="text-zinc-700 text-6xl rotate-12 select-none font-black opacity-20">BETONEIRA</div>
-                {/* Decorative elements */}
-                <div className="absolute bottom-10 left-10 right-10 h-1 bg-zinc-700 overflow-hidden">
-                  <div className="h-full bg-yellow-500 w-1/3"></div>
-                </div>
+                <Image src="/hero_betoneira.png" alt="Betoneira de alta performance" fill className="object-cover group-hover:scale-105 transition-transform duration-700" priority />
+                <div className="absolute inset-0 bg-gradient-to-tr from-yellow-500/20 to-transparent mix-blend-overlay"></div>
               </div>
               {/* Floating badge */}
               <div className="absolute -bottom-6 -left-6 bg-zinc-900 border border-zinc-800 p-6 rounded-xl shadow-2xl flex items-center gap-4 max-w-xs">
@@ -114,15 +111,20 @@ export default function Home() {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { name: "Betoneira 400L", desc: "A mais procurada. Ideal para fundações e lajes de médio porte.", cap: "400 Litros" },
-              { name: "Betoneira 250L", desc: "Perfeita para reformas e construções menores. Alta mobilidade.", cap: "250 Litros" },
-              { name: "Betoneira 600L", desc: "Para grandes obras que exigem alto volume de concreto rápido.", cap: "600 Litros" }
+              { name: "Betoneira 400L", desc: "A mais procurada. Ideal para fundações e lajes de médio porte.", cap: "400 Litros", img: "/betoneira_400l.png" },
+              { name: "Betoneira 250L", desc: "Perfeita para reformas e construções menores. Alta mobilidade.", cap: "250 Litros", img: "/betoneira_250l.png" },
+              { name: "Betoneira 600L", desc: "Para grandes obras que exigem alto volume de concreto rápido.", cap: "600 Litros", img: null }
             ].map((maq, i) => (
               <div key={i} className="bg-zinc-900 border border-zinc-800 rounded-sm p-6 group hover:border-yellow-500/50 transition-all-custom flex flex-col h-full">
                 <div className="aspect-video bg-zinc-950 rounded-sm mb-6 flex items-center justify-center border border-zinc-800/50 relative overflow-hidden">
-                  {/* Image Placeholder */}
-                  <div className="absolute inset-0 bg-yellow-500/5 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                  <span className="text-zinc-800 font-black text-2xl uppercase group-hover:scale-110 transition-transform">{maq.cap}</span>
+                  {maq.img ? (
+                    <Image src={maq.img} alt={maq.name} fill className="object-cover scale-105 group-hover:scale-110 transition-transform duration-500" />
+                  ) : (
+                    <>
+                      <div className="absolute inset-0 bg-yellow-500/5 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                      <span className="text-zinc-800 font-black text-2xl uppercase group-hover:scale-110 transition-transform">{maq.cap}</span>
+                    </>
+                  )}
                 </div>
                 <div className="mb-auto">
                   <div className="flex justify-between items-start mb-3">
