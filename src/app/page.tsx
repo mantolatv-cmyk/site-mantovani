@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Phone, CheckCircle2, Loader2, ChevronDown } from 'lucide-react';
+import { Phone, CheckCircle2, Loader2, ChevronDown, Quote, Star } from 'lucide-react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
@@ -267,6 +267,62 @@ export default function Home() {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-24 bg-zinc-900 border-t border-zinc-800 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div {...fadeIn} className="text-center mb-16">
+            <h2 className="text-3xl lg:text-5xl font-black uppercase italic mb-4">Quem Constrói <br/><span className="text-yellow-500">Confia na Mantovani</span></h2>
+            <p className="text-zinc-500">Parcerias de décadas forjadas no canteiro de obras.</p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                name: "Ricardo Souza",
+                role: "Mestre de Obras (15 anos de parceria)",
+                text: "Alugo com a Mantovani desde que comecei. O diferencial deles não é só a máquina, é a palavra. Se dizem que entregam às 7h, às 6h50 o caminhão está na frente da obra.",
+                rating: 5
+              },
+              {
+                name: "Engª Amanda Oliveira",
+                role: "Construtora Horizonte",
+                text: "Como engenheira, o que mais prezo é a manutenção. Com a Mantovani, sei que a betoneira não vai parar no meio da laje. O suporte deles é o melhor da região, sem dúvida.",
+                rating: 5
+              },
+              {
+                name: "Sr. José Ferreira",
+                role: "Construtor Autônomo",
+                text: "Já tentei outros, mas sempre volto para a Mantovani. São 20 anos alugando com eles e o atendimento continua o mesmo: honesto, rápido e justo. Eles entendem a nossa realidade.",
+                rating: 5
+              }
+            ].map((testimonial, i) => (
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ delay: i * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-zinc-950 p-8 border border-zinc-800 rounded-sm relative group hover:border-yellow-500/30 transition-all"
+              >
+                <Quote className="text-yellow-500/20 absolute top-6 right-6 group-hover:text-yellow-500/40 transition-colors" size={40} />
+                <div className="flex gap-1 mb-6">
+                  {[...Array(testimonial.rating)].map((_, idx) => (
+                    <Star key={idx} size={14} className="fill-yellow-500 text-yellow-500" />
+                  ))}
+                </div>
+                <p className="text-zinc-300 italic mb-8 leading-relaxed relative z-10">
+                  "{testimonial.text}"
+                </p>
+                <div className="border-t border-zinc-800 pt-6">
+                  <p className="font-bold uppercase text-sm tracking-wide text-zinc-100">{testimonial.name}</p>
+                  <p className="text-zinc-500 text-[10px] uppercase font-bold tracking-widest mt-1">{testimonial.role}</p>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
