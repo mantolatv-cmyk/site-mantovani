@@ -211,7 +211,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
             {[
               { name: "Betoneira 400L", desc: "A mais procurada. Ideal para fundações e lajes de médio porte. Marca Menegotti.", cap: "400 Litros", img: "/hero_betoneira_400l.png" },
-              { name: "Rompedor 20kg", desc: "Alta produtividade para demolição de pisos e lajes de concreto.", cap: "20 KG", img: "/rompedor.png" },
+              { name: "Rompedor 20kg", desc: "Alta produtividade para demolição de pisos e lajes de concreto. Marca Hilti - O mais potente da categoria.", cap: "20 KG", img: "/rompedor_20kg_hilti.png" },
               { name: "Placa Vibratória", desc: "Ideal para compactação de solos granulares e asfalto.", cap: "Frente Reversível", img: "/placa.png" }
             ].map((maq, i) => (
               <div key={i} className="bg-zinc-900 border border-zinc-800 rounded-sm p-6 group hover:border-yellow-500/50 transition-all-custom flex flex-col h-full">
