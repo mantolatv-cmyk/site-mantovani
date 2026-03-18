@@ -8,15 +8,18 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        outfit: ["var(--font-outfit)"],
+      },
       colors: {
         yellow: {
-          500: "#FFC107", // Amarelo mais forte/vibrante
+          500: "#FFC107",
           400: "#FFD54F",
         },
         zinc: {
-          800: "#1A1A1A", // Bordas sutis no preto
-          900: "#0A0A0A", // Preto bem escuro
-          950: "#000000", // Preto puro
+          800: "#1A1A1A",
+          900: "#0A0A0A",
+          950: "#000000",
         },
       },
     },

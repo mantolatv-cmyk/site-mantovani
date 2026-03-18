@@ -38,9 +38,9 @@ export default function Home() {
             <div className="w-10 h-10 bg-yellow-500 flex items-center justify-center rounded-sm">
               <span className="text-zinc-900 font-black text-xl">M</span>
             </div>
-            <span className="font-bold text-xl tracking-tighter uppercase">Betoneiras <span className="text-yellow-500">Mantovani</span></span>
+            <span className="font-outfit font-black text-2xl tracking-tighter uppercase">Betoneiras <span className="text-yellow-500">Mantovani</span></span>
           </div>
-          <div className="hidden md:flex items-center gap-8 text-sm font-medium uppercase tracking-widest">
+          <div className="hidden md:flex items-center gap-8 text-[11px] font-bold uppercase tracking-[0.25em] font-outfit">
             <a href="#inicio" className="hover:text-yellow-500 transition-colors">Início</a>
             <a href="#equipamentos" className="hover:text-yellow-500 transition-colors">Equipamentos</a>
             <a href="#contato" className="hover:text-yellow-500 transition-colors">Contato</a>
@@ -534,7 +534,7 @@ export default function Home() {
                 <div className="w-10 h-10 bg-yellow-500 flex items-center justify-center rounded-sm">
                   <span className="text-black font-black text-xl">M</span>
                 </div>
-                <span className="font-bold text-xl tracking-tighter uppercase">Betoneiras <span className="text-yellow-500">Mantovani</span></span>
+                <span className="font-outfit font-black text-2xl tracking-tighter uppercase">Betoneiras <span className="text-yellow-500">Mantovani</span></span>
               </div>
               <p className="text-zinc-500 text-sm leading-relaxed max-w-sm">
                 Líder em locação de equipamentos para construção civil em São Paulo. 
