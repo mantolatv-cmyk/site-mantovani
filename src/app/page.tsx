@@ -228,7 +228,8 @@ export default function Home() {
               { name: "Betoneira 400L", desc: "A mais procurada. Ideal para fundações e lajes de médio porte. Marca Menegotti.", cap: "400 Litros", img: "/hero_betoneira_400l.png" },
               { name: "Rompedor 20kg", desc: "Alta produtividade para demolição de pisos e lajes de concreto. Marca Hilti - O mais potente da categoria.", cap: "20 KG", img: "/rompedor_20kg_hilti.png" },
               { name: "Placa Vibratória", desc: "Ideal para compactação de solos granulares e asfalto.", cap: "Frente Reversível", img: "/placa_vibratoria_mantovani.png" },
-              { name: "Andaimes Tubulares", desc: "Práticos e seguros para reformas e manutenções. Montagem rápida e estrutura robusta conforme NR-18.", cap: "Sistema NR-18", img: "/andaimes.png" }
+              { name: "Andaimes Tubulares", desc: "Práticos e seguros para reformas e manutenções. Montagem rápida e estrutura robusta conforme NR-18.", cap: "Sistema NR-18", img: "/andaimes.png" },
+              { name: "Escoras Metálicas", desc: "Reguláveis e de alta resistência. Suporte essencial para escoramento de vigas e lajes com máxima segurança.", cap: "Até 4.0 metros", img: "/escoras.png" }
             ].map((maq, i) => (
               <div key={i} className="bg-zinc-900/40 backdrop-blur-sm border border-zinc-800/50 rounded-sm p-6 group hover:border-yellow-500/50 transition-all-custom flex flex-col h-full relative z-10">
                 <div className="aspect-video bg-zinc-950 rounded-sm mb-6 flex items-center justify-center border border-zinc-800/50 relative overflow-hidden">
