@@ -1,13 +1,14 @@
 'use client';
 
 import { useState } from 'react';
-import { Phone, CheckCircle2, Loader2 } from 'lucide-react';
+import { Phone, CheckCircle2, Loader2, ChevronDown } from 'lucide-react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 export default function Home() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -59,10 +60,11 @@ export default function Home() {
                 Líder em Locação de Betoneiras
               </span>
               <h1 className="text-5xl lg:text-7xl font-black leading-tight mb-6 uppercase italic">
-                Sua obra <span className="text-yellow-500">não pode parar.</span>
+                O aluguel que garante: <br/>
+                <span className="text-yellow-500">Atraso zero</span> em sua obra.
               </h1>
               <p className="text-xl text-zinc-400 mb-10 max-w-lg leading-relaxed">
-                Equipamentos de força para quem constrói o futuro. Robustez, confiabilidade e a agilidade que seu projeto exige.
+                Betoneiras e rompedores de alta performance com manutenção rigorosa. A força bruta que sua construção exige com a pontualidade que seu cronograma pede.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <button className="bg-yellow-500 hover:bg-yellow-400 text-zinc-900 px-8 py-4 rounded-sm font-black uppercase flex items-center justify-center gap-3 transition-transform active:scale-95 group">
@@ -118,9 +120,9 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { title: "Manutenção Rigorosa", desc: "Equipamentos que não te deixam na mão. Revisões constantes seguindo as normas NR-18.", icon: "🛠️" },
-              { title: "Entrega Rápida", desc: "Logística própria para garantir que a betoneira chegue no canteiro no momento planejado.", icon: "🚚" },
-              { title: "Suporte Técnico", desc: "Equipe especializada pronta para resolver qualquer imprevisto diretamente na sua obra.", icon: "👷" }
+              { title: "Revisão em 21 Pontos", desc: "Nossos equipamentos passam por inspeção técnica severa antes de cada entrega, garantindo zero paradas imprevistas no canteiro.", icon: "🛠️" },
+              { title: "Entrega Express em SP", desc: "Logística ágil e pontual. Sabemos que cada minuto parado é dinheiro perdido, por isso cumprimos o prazo à risca.", icon: "🚚" },
+              { title: "Assistência Prioritária", desc: "Suporte técnico especializado que vai até a sua obra em tempo recorde para garantir a continuidade do seu projeto.", icon: "👷" }
             ].map((item, i) => (
               <motion.div 
                 key={i} 
@@ -147,8 +149,8 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
             <div>
-              <h2 className="text-3xl lg:text-5xl font-black uppercase italic mb-4">Nossa <span className="text-yellow-500">Frota</span></h2>
-              <p className="text-zinc-400 max-w-md">Soluções ideais para pequeno, médio e grande porte. Equipamentos robustos e revisados.</p>
+              <h2 className="text-3xl lg:text-5xl font-black uppercase italic mb-4">Equipamentos <span className="text-yellow-500">de Elite</span></h2>
+              <p className="text-zinc-400 max-w-md">As melhores marcas do mercado (Menegotti, CSM) revisadas e prontas para o trabalho pesado em qualquer escala.</p>
             </div>
           </div>
           
@@ -211,6 +213,58 @@ export default function Home() {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-24 bg-zinc-950 border-y border-zinc-800">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div {...fadeIn} className="text-center mb-16">
+            <h2 className="text-3xl lg:text-5xl font-black uppercase italic mb-4">Dúvidas <span className="text-yellow-500">Frequentes</span></h2>
+            <p className="text-zinc-500">Transparência e agilidade para sua obra não parar.</p>
+          </motion.div>
+
+          <div className="space-y-4">
+            {[
+              { 
+                q: "Quanto tempo leva a entrega após o fechamento?", 
+                a: "Nossa logística no Bairro da Ponte e região é reconhecida pela rapidez. Dependendo da disponibilidade, conseguimos entregar no mesmo dia para garantir que seu cronograma não sofra atrasos." 
+              },
+              { 
+                q: "O que acontece se o equipamento apresentar defeito durante a obra?", 
+                a: "Temos assistência prioritária. Caso ocorra qualquer falha técnica, nossa equipe vai até o local em tempo recorde. Se não for possível o conserto imediato, realizamos a substituição do equipamento sem custo adicional." 
+              },
+              { 
+                q: "Qual o prazo mínimo de locação para betoneiras?", 
+                a: "Trabalhamos com prazos flexíveis: diário, semanal, quinzenal e mensal. Adaptamos o contrato à necessidade real do seu projeto, com condições especiais para períodos longos." 
+              },
+              { 
+                q: "Vocês trabalham apenas com betoneiras?", 
+                a: "Não. Nosso catálogo de elite inclui rompedores, placas vibratórias, compactadores de solo e diversas ferramentas elétricas e manuais essenciais para todas as fases da construção." 
+              },
+              { 
+                q: "Quais as formas de pagamento aceitas?", 
+                a: "Facilitamos o processo para construtoras e pessoas físicas: aceitamos PIX, cartões de crédito/débito e boleto bancário (sujeito a análise cadastral)." 
+              }
+            ].map((item, i) => (
+              <div key={i} className="border border-zinc-800 bg-zinc-900 rounded-sm overflow-hidden">
+                <button 
+                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                  className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-zinc-800 transition-colors"
+                >
+                  <span className="font-bold uppercase text-sm tracking-wide">{item.q}</span>
+                  <ChevronDown className={`text-yellow-500 transition-transform duration-300 ${openFaq === i ? 'rotate-180' : ''}`} size={20} />
+                </button>
+                <div 
+                  className={`overflow-hidden transition-all duration-300 ease-in-out ${openFaq === i ? 'max-h-48' : 'max-h-0'}`}
+                >
+                  <div className="px-6 pb-6 text-zinc-400 text-sm leading-relaxed border-t border-zinc-800 pt-4">
+                    {item.a}
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
