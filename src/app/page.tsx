@@ -28,7 +28,9 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-zinc-900 text-zinc-100 font-sans">
+    <main className="min-h-screen bg-black text-zinc-100 font-sans relative selection:bg-yellow-500 selection:text-black">
+      <div className="bg-noise" />
+
       {/* Header/Nav Placeholder */}
       <nav className="border-b border-zinc-800 bg-zinc-900/50 backdrop-blur-md sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
@@ -47,7 +49,9 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section id="inicio" className="relative py-20 lg:py-32 overflow-hidden">
+      <section id="inicio" className="relative py-20 lg:py-32 overflow-hidden bg-zinc-950/50">
+        <div className="mesh-glow opacity-50" />
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div 
@@ -116,7 +120,9 @@ export default function Home() {
       </section>
 
       {/* Differentials Grid */}
-      <section className="py-24 bg-zinc-950 border-y border-zinc-800">
+      <section className="py-24 bg-gradient-to-b from-black to-zinc-950 border-y border-zinc-800/50 relative overflow-hidden">
+        <div className="mesh-glow opacity-30" />
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div {...fadeIn} className="text-center mb-16">
             <h2 className="text-3xl font-black uppercase italic mb-4">Por que escolher a <span className="text-yellow-500">Mantovani?</span></h2>
@@ -150,7 +156,9 @@ export default function Home() {
       </section>
 
       {/* Sobre a Mantovani - História */}
-      <section className="py-24 relative overflow-hidden bg-zinc-900">
+      <section className="py-24 relative overflow-hidden bg-zinc-950 border-b border-zinc-800/30">
+        <div className="mesh-glow opacity-40 rotate-180" />
+
         <div className="absolute top-0 right-0 p-20 opacity-5 select-none pointer-events-none">
           <span className="text-[20rem] font-black leading-none">40</span>
         </div>
@@ -204,7 +212,9 @@ export default function Home() {
       </section>
 
       {/* Equipamentos */}
-      <section id="equipamentos" className="py-24">
+      <section id="equipamentos" className="py-24 bg-gradient-to-t from-black via-zinc-950 to-black relative overflow-hidden">
+        <div className="mesh-glow opacity-25" />
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
             <div>
@@ -219,7 +229,7 @@ export default function Home() {
               { name: "Rompedor 20kg", desc: "Alta produtividade para demolição de pisos e lajes de concreto. Marca Hilti - O mais potente da categoria.", cap: "20 KG", img: "/rompedor_20kg_hilti.png" },
               { name: "Placa Vibratória", desc: "Ideal para compactação de solos granulares e asfalto.", cap: "Frente Reversível", img: "/placa_vibratoria_mantovani.png" }
             ].map((maq, i) => (
-              <div key={i} className="bg-zinc-900 border border-zinc-800 rounded-sm p-6 group hover:border-yellow-500/50 transition-all-custom flex flex-col h-full">
+              <div key={i} className="bg-zinc-900/40 backdrop-blur-sm border border-zinc-800/50 rounded-sm p-6 group hover:border-yellow-500/50 transition-all-custom flex flex-col h-full relative z-10">
                 <div className="aspect-video bg-zinc-950 rounded-sm mb-6 flex items-center justify-center border border-zinc-800/50 relative overflow-hidden">
                   {maq.img ? (
                     <Image src={maq.img} alt={maq.name} fill className="object-cover scale-105 group-hover:scale-110 transition-transform duration-500" />
@@ -395,7 +405,9 @@ export default function Home() {
       </section>
 
       {/* Contato Section */}
-      <section id="contato" className="py-24 bg-zinc-900 border-t border-zinc-800 relative overflow-hidden">
+      <section id="contato" className="py-24 bg-black border-t border-zinc-800/50 relative overflow-hidden">
+        <div className="mesh-glow opacity-60" />
+
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-yellow-500/5 to-transparent pointer-events-none"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16">
@@ -445,7 +457,7 @@ export default function Home() {
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="bg-zinc-950 p-8 lg:p-10 rounded-sm border border-zinc-800"
+              className="bg-zinc-950/50 backdrop-blur-md p-8 lg:p-10 rounded-sm border border-zinc-800/50 relative z-10"
             >
               <h3 className="text-xl font-bold uppercase mb-8 border-b border-zinc-800 pb-4">Solicite um Orçamento</h3>
               
