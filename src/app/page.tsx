@@ -67,12 +67,17 @@ export default function Home() {
                 Referência em locação de equipamentos para construção em Atibaia desde 1986. Sua obra não pode parar: alugue betoneiras e rompedores com entrega expressa e manutenção rigorosa.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="bg-yellow-500 hover:bg-yellow-400 text-zinc-900 px-8 py-4 rounded-sm font-black uppercase flex items-center justify-center gap-3 transition-transform active:scale-95 group">
+                <a 
+                  href="https://wa.me/5511999408103?text=Olá!%20Gostaria%20de%20falar%20sobre%20o%20aluguel%20de%20equipamentos."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-yellow-500 hover:bg-yellow-400 text-zinc-900 px-8 py-4 rounded-sm font-black uppercase flex items-center justify-center gap-3 transition-transform active:scale-95 group text-center"
+                >
                   Alugue via WhatsApp
                   <span className="bg-zinc-900 text-yellow-500 p-1 rounded-full group-hover:translate-x-1 transition-transform">
                     →
                   </span>
-                </button>
+                </a>
                 <button className="border border-zinc-700 hover:border-zinc-500 px-8 py-4 rounded-sm font-bold uppercase transition-colors">
                   Ver Catálogo
                 </button>
