@@ -144,6 +144,60 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Sobre a Mantovani - História */}
+      <section className="py-24 relative overflow-hidden bg-zinc-900">
+        <div className="absolute top-0 right-0 p-20 opacity-5 select-none pointer-events-none">
+          <span className="text-[20rem] font-black leading-none">40</span>
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <motion.div {...fadeIn}>
+              <span className="text-yellow-500 font-bold uppercase tracking-widest text-xs mb-4 block">Desde 1986</span>
+              <h2 className="text-4xl lg:text-6xl font-black uppercase italic mb-8 leading-tight">
+                Nossa história gravada no <br/>
+                <span className="text-yellow-500">concreto de Atibaia.</span>
+              </h2>
+              <div className="space-y-6 text-zinc-400 text-lg leading-relaxed">
+                <p>
+                  Há quatro décadas, a <span className="text-zinc-100 font-bold italic">Betoneiras Mantovani</span> começou sua jornada como um pequeno negócio familiar. Hoje, ao olharmos para o horizonte de Atibaia e região, vemos em cada prédio, casa e galpão industrial um pouco do nosso trabalho.
+                </p>
+                <p>
+                  Não alugamos apenas máquinas; compartilhamos a responsabilidade de erguer o futuro da nossa cidade. Estivemos presentes das fundações do Bairro da Ponte aos grandes projetos urbanos, sempre com o mesmo compromisso: **força bruta e palavra cumprida.**
+                </p>
+              </div>
+              
+              <div className="mt-10 grid grid-cols-2 gap-8 border-t border-zinc-800 pt-10">
+                <div>
+                  <p className="text-3xl font-black text-yellow-500 mb-1">40+</p>
+                  <p className="text-xs uppercase font-bold text-zinc-500 tracking-wider">Anos de Tradição</p>
+                </div>
+                <div>
+                  <p className="text-3xl font-black text-yellow-500 mb-1">Atibaia/SP</p>
+                  <p className="text-xs uppercase font-bold text-zinc-500 tracking-wider">Nossa Sede</p>
+                </div>
+              </div>
+            </motion.div>
+            
+            <div className="relative">
+              <div className="aspect-[4/5] bg-zinc-800 rounded-sm overflow-hidden border border-zinc-700 relative group">
+                {/* Fallback image style with dark overlay for tradition */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10"></div>
+                <Image 
+                  src="/hero_betoneira.png" 
+                  alt="Tradição Betoneiras Mantovani" 
+                  fill 
+                  className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700 hover:scale-105"
+                />
+                <div className="absolute bottom-8 left-8 z-20">
+                  <p className="text-white font-black text-2xl italic uppercase underline decoration-yellow-500 underline-offset-8">A força de quem conhece sua terra.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Equipamentos */}
       <section id="equipamentos" className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
