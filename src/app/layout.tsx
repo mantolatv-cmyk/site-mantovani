@@ -10,17 +10,16 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Betoneiras Mantovani | Locação de Betoneiras e Equipamentos em Atibaia",
-  description: "Líder em locação de equipamentos para construção civil em Atibaia e região. Aluguel de betoneiras Menegotti, rompedores Hilti e placas vibratórias. Pronta entrega e assistência técnica.",
+  title: "Aluguel de Betoneiras em Atibaia | Betoneiras Mantovani",
+  description: "Locação de betoneiras, andaimes e equipamentos para construção civil em Atibaia. Entrega rápida, máquinas revisadas e o melhor preço da região. Solicite seu orçamento!",
   keywords: [
-    "betoneira Atibaia", 
-    "locação de equipamentos Atibaia", 
-    "aluguel de betoneira Atibaia", 
-    "locação de rompedor Atibaia", 
-    "Betoneiras Mantovani", 
-    "equipamentos construção civil Atibaia",
-    "aluguel de placa vibratória Atibaia",
-    "Bairro da Ponte Atibaia"
+    "aluguel de betoneira", 
+    "locação de equipamentos construção", 
+    "andaimes Atibaia", 
+    "Atibaia",
+    "Betoneiras Mantovani",
+    "locação de betoneira Atibaia",
+    "aluguel de ferramentas construção civil"
   ],
   authors: [{ name: "Betoneiras Mantovani" }],
   creator: "Betoneiras Mantovani",
@@ -31,11 +30,11 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
-    title: "Betoneiras Mantovani | Locação de Equipamentos em Atibaia",
-    description: "Sua obra não pode parar. Aluguel de betoneiras e ferramentas com entrega rápida em Atibaia e região.",
+    title: "Aluguel de Betoneiras em Atibaia | Betoneiras Mantovani",
+    description: "Equipamentos revisados para sua obra em Atibaia. Betoneiras, andaimes e mais com pronta entrega.",
     type: "website",
     locale: "pt_BR",
-    url: "https://betoneirasmantovani.com.br",
+    url: "https://mantovani-locacao.vercel.app/",
     siteName: "Betoneiras Mantovani",
   },
   robots: {
@@ -43,7 +42,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   alternates: {
-    canonical: "https://betoneirasmantovani.com.br",
+    canonical: "https://mantovani-locacao.vercel.app/",
   }
 };
 
@@ -64,8 +63,8 @@ export default function RootLayout({
               "@type": "LocalBusiness",
               "name": "Betoneiras Mantovani",
               "image": "https://betoneirasmantovani.com.br/hero_betoneira_400l.png",
-              "@id": "https://betoneirasmantovani.com.br",
-              "url": "https://betoneirasmantovani.com.br",
+              "@id": "https://mantovani-locacao.vercel.app/",
+              "url": "https://mantovani-locacao.vercel.app/",
               "telephone": "+5511999408103",
               "address": {
                 "@type": "PostalAddress",
