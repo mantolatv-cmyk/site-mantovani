@@ -87,7 +87,7 @@ export default function Home() {
               className="relative"
             >
               <div className="aspect-square bg-zinc-800 rounded-2xl relative overflow-hidden flex items-center justify-center group border border-zinc-700">
-                <Image src="/hero_betoneira.png" alt="Betoneira de alta performance" fill className="object-cover group-hover:scale-105 transition-transform duration-700" priority />
+                <Image src="/hero_betoneira_400l.png" alt="Betoneira Mantovani 400L" fill className="object-cover group-hover:scale-105 transition-transform duration-700" priority />
                 <div className="absolute inset-0 bg-gradient-to-tr from-yellow-500/20 to-transparent mix-blend-overlay"></div>
               </div>
               {/* Floating badge */}
