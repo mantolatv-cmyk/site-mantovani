@@ -60,11 +60,11 @@ export default function Home() {
                 Líder em Locação de Betoneiras
               </span>
               <h1 className="text-5xl lg:text-7xl font-black leading-tight mb-6 uppercase italic">
-                O aluguel que garante: <br/>
-                <span className="text-yellow-500">Atraso zero</span> em sua obra.
+                Locação de <span className="text-yellow-500">Betoneiras</span> <br/>
+                em Atibaia: Atraso Zero.
               </h1>
               <p className="text-xl text-zinc-400 mb-10 max-w-lg leading-relaxed">
-                Betoneiras e rompedores de alta performance com manutenção rigorosa. A força bruta que sua construção exige com a pontualidade que seu cronograma pede.
+                Referência em locação de equipamentos para construção em Atibaia desde 1986. Sua obra não pode parar: alugue betoneiras e rompedores com entrega expressa e manutenção rigorosa.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <button className="bg-yellow-500 hover:bg-yellow-400 text-zinc-900 px-8 py-4 rounded-sm font-black uppercase flex items-center justify-center gap-3 transition-transform active:scale-95 group">
@@ -121,7 +121,7 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               { title: "Revisão em 21 Pontos", desc: "Nossos equipamentos passam por inspeção técnica severa antes de cada entrega, garantindo zero paradas imprevistas no canteiro.", icon: "🛠️" },
-              { title: "Entrega Express em SP", desc: "Logística ágil e pontual. Sabemos que cada minuto parado é dinheiro perdido, por isso cumprimos o prazo à risca.", icon: "🚚" },
+              { title: "Entrega Express em Atibaia", desc: "Logística ágil e pontual. Sabemos que cada minuto parado é dinheiro perdido, por isso cumprimos o prazo à risca.", icon: "🚚" },
               { title: "Assistência Prioritária", desc: "Suporte técnico especializado que vai até a sua obra em tempo recorde para garantir a continuidade do seu projeto.", icon: "👷" }
             ].map((item, i) => (
               <motion.div 
@@ -429,7 +429,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h4 className="text-sm font-bold uppercase text-zinc-500 mb-1">Localização</h4>
-                    <p className="text-xl font-bold">Avenida São João, 1601 - Bairro da Ponte</p>
+                    <p className="text-xl font-bold">Avenida São João, 1601 - Bairro da Ponte, Atibaia/SP</p>
                   </div>
                 </div>
               </div>
