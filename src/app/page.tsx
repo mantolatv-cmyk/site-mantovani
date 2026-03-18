@@ -163,7 +163,7 @@ export default function Home() {
                   Há quatro décadas, a <span className="text-zinc-100 font-bold italic">Betoneiras Mantovani</span> começou sua jornada como um pequeno negócio familiar. Hoje, ao olharmos para o horizonte de Atibaia e região, vemos em cada prédio, casa e galpão industrial um pouco do nosso trabalho.
                 </p>
                 <p>
-                  Não alugamos apenas máquinas; compartilhamos a responsabilidade de erguer o futuro da nossa cidade. Estivemos presentes das fundações do Bairro da Ponte aos grandes projetos urbanos, sempre com o mesmo compromisso: **força bruta e palavra cumprida.**
+                  Não alugamos apenas máquinas; compartilhamos a responsabilidade de erguer o futuro da nossa cidade. Estivemos presentes das fundações do Bairro da Ponte aos grandes projetos urbanos, sempre com o mesmo compromisso: **tradição que ergue histórias, confiança que sustenta o seu futuro.**
                 </p>
               </div>
               
