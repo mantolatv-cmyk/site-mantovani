@@ -82,9 +82,12 @@ export default function Home() {
                     →
                   </span>
                 </a>
-                <button className="border border-zinc-700 hover:border-zinc-500 px-8 py-4 rounded-sm font-bold uppercase transition-colors">
+                <a 
+                  href="#catalogo" 
+                  className="border border-zinc-700 hover:border-zinc-500 px-8 py-4 rounded-sm font-bold uppercase transition-colors text-center block sm:inline-block"
+                >
                   Ver Catálogo
-                </button>
+                </a>
               </div>
             </motion.div>
 
@@ -260,7 +263,7 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="border-t border-zinc-800 pt-20">
+          <div id="catalogo" className="border-t border-zinc-800 pt-20">
             <div className="mb-16 text-center">
               <h3 className="text-2xl lg:text-4xl font-black uppercase italic mb-4">Catálogo de <span className="text-yellow-500">Ferramentas</span></h3>
               <p className="text-zinc-500">Equipamentos auxiliares para todas as etapas da sua construção.</p>
