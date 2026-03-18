@@ -231,9 +231,14 @@ export default function Home() {
                   </div>
                   <p className="text-zinc-400 text-sm">{maq.desc}</p>
                 </div>
-                <button className="mt-8 w-full bg-zinc-800 hover:bg-yellow-500 hover:text-zinc-900 text-zinc-300 py-3 rounded-sm font-bold uppercase transition-colors text-sm">
+                <a 
+                  href={`https://wa.me/5511999408103?text=Olá! Gostaria de consultar o valor da ${maq.name}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-8 w-full bg-zinc-800 hover:bg-yellow-500 hover:text-zinc-900 text-zinc-300 py-3 rounded-sm font-bold uppercase transition-colors text-sm text-center block"
+                >
                   Consultar Valor
-                </button>
+                </a>
               </div>
             ))}
           </div>
@@ -261,9 +266,14 @@ export default function Home() {
                   </div>
                   <h4 className="font-bold uppercase mb-2 group-hover:text-yellow-500 transition-colors">{tool.name}</h4>
                   <p className="text-zinc-500 text-xs mb-6 leading-relaxed">{tool.desc}</p>
-                  <button className="text-[10px] font-black uppercase tracking-widest text-zinc-400 group-hover:text-yellow-500 flex items-center gap-2">
+                  <a 
+                    href={`https://wa.me/5511999408103?text=Olá! Gostaria de consultar o aluguel de: ${tool.name}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[10px] font-black uppercase tracking-widest text-zinc-400 group-hover:text-yellow-500 flex items-center gap-2"
+                  >
                     Consultar Aluguel <span>→</span>
-                  </button>
+                  </a>
                 </div>
               ))}
             </div>
