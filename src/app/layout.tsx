@@ -41,6 +41,13 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  manifest: "/manifest.json",
+  themeColor: "#FFC107",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "Mantovani",
+  },
   alternates: {
     canonical: "https://mantovani-locacao.vercel.app/",
   }
@@ -55,6 +62,24 @@ export default function RootLayout({
     <html lang="pt-BR" className="scroll-smooth">
       <body className={`${inter.className} ${outfit.variable} antialiased selection:bg-yellow-500 selection:text-zinc-900`}>
         {children}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              if ('serviceWorker' in navigator) {
+                window.addEventListener('load', function() {
+                  navigator.serviceWorker.register('/sw.js').then(
+                    function(registration) {
+                      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                    },
+                    function(err) {
+                      console.log('ServiceWorker registration failed: ', err);
+                    }
+                  );
+                });
+              }
+            `,
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
