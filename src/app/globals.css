@@ -32,6 +32,16 @@ body {
   pointer-events: none;
   position: absolute;
   inset: 0;
+  z-index: 1; /* Acima da chapa de metal */
+}
+
+/* Textura de Chapa de Metal (Diamond Plate) */
+.bg-metal-plate {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M20 0 L40 20 L20 40 L0 20 Z M60 40 L80 60 L60 80 L40 60 Z'/%3E%3Cpath fill-opacity='0.01' d='M60 0 L80 20 L60 40 L40 20 Z M20 40 L40 60 L20 80 L0 60 Z'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-attachment: fixed;
+  position: absolute;
+  inset: 0;
   z-index: 0;
 }
 

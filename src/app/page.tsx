@@ -29,6 +29,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-black text-zinc-100 font-sans relative selection:bg-yellow-500 selection:text-black">
+      <div className="bg-metal-plate" />
       <div className="bg-noise" />
 
       {/* Header/Nav Placeholder */}
@@ -123,7 +124,7 @@ export default function Home() {
       </section>
 
       {/* Differentials Grid */}
-      <section className="py-24 bg-gradient-to-b from-black to-zinc-950 border-y border-zinc-800/50 relative overflow-hidden">
+      <section className="py-24 bg-gradient-to-b from-black/80 to-zinc-950/80 border-y border-zinc-800/50 relative overflow-hidden">
         <div className="mesh-glow opacity-30" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -159,7 +160,7 @@ export default function Home() {
       </section>
 
       {/* Sobre a Mantovani - História */}
-      <section className="py-24 relative overflow-hidden bg-zinc-950 border-b border-zinc-800/30">
+      <section className="py-24 relative overflow-hidden bg-zinc-950/90 border-b border-zinc-800/30">
         <div className="mesh-glow opacity-40 rotate-180" />
 
         <div className="absolute top-0 right-0 p-20 opacity-5 select-none pointer-events-none">
@@ -215,7 +216,7 @@ export default function Home() {
       </section>
 
       {/* Equipamentos */}
-      <section id="equipamentos" className="py-24 bg-gradient-to-t from-black via-zinc-950 to-black relative overflow-hidden scroll-mt-20">
+      <section id="equipamentos" className="py-24 bg-gradient-to-t from-black/80 via-zinc-950/80 to-black/80 relative overflow-hidden scroll-mt-20">
         <div className="mesh-glow opacity-25" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -410,7 +411,7 @@ export default function Home() {
       </section>
 
       {/* Contato Section */}
-      <section id="contato" className="py-24 bg-black border-t border-zinc-800/50 relative overflow-hidden scroll-mt-20">
+      <section id="contato" className="py-24 bg-black/90 border-t border-zinc-800/50 relative overflow-hidden scroll-mt-20">
         <div className="mesh-glow opacity-60" />
 
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-yellow-500/5 to-transparent pointer-events-none"></div>
