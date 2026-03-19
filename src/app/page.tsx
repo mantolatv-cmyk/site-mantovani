@@ -49,7 +49,7 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section id="inicio" className="relative py-20 lg:py-32 overflow-hidden bg-zinc-950/50">
+      <section id="inicio" className="relative py-20 lg:py-32 overflow-hidden bg-zinc-950/50 scroll-mt-20">
         <div className="mesh-glow opacity-50" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -215,7 +215,7 @@ export default function Home() {
       </section>
 
       {/* Equipamentos */}
-      <section id="equipamentos" className="py-24 bg-gradient-to-t from-black via-zinc-950 to-black relative overflow-hidden">
+      <section id="equipamentos" className="py-24 bg-gradient-to-t from-black via-zinc-950 to-black relative overflow-hidden scroll-mt-20">
         <div className="mesh-glow opacity-25" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -263,7 +263,7 @@ export default function Home() {
             ))}
           </div>
 
-          <div id="catalogo" className="border-t border-zinc-800 pt-20">
+          <div id="catalogo" className="border-t border-zinc-800 pt-20 scroll-mt-20">
             <div className="mb-16 text-center">
               <h3 className="text-2xl lg:text-4xl font-black uppercase italic mb-4">Catálogo de <span className="text-yellow-500">Ferramentas</span></h3>
               <p className="text-zinc-500">Equipamentos auxiliares para todas as etapas da sua construção.</p>
@@ -410,7 +410,7 @@ export default function Home() {
       </section>
 
       {/* Contato Section */}
-      <section id="contato" className="py-24 bg-black border-t border-zinc-800/50 relative overflow-hidden">
+      <section id="contato" className="py-24 bg-black border-t border-zinc-800/50 relative overflow-hidden scroll-mt-20">
         <div className="mesh-glow opacity-60" />
 
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-yellow-500/5 to-transparent pointer-events-none"></div>
