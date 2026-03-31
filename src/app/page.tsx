@@ -270,23 +270,65 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
+
+          {/* Full Tools Catalog Sub-grid */}
+          <div className="mt-24 pt-20 border-t border-white/5">
+            <div className="mb-16 text-center">
+              <h3 className="text-3xl lg:text-4xl font-black uppercase italic mb-4">Catálogo de <span className="text-yellow-500">Ferramentas</span></h3>
+              <p className="text-zinc-500 font-medium max-w-lg mx-auto">Equipamentos auxiliares técnicos para todas as etapas da sua construção civil.</p>
+            </div>
+
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                { name: "Rompedor", desc: "Demolição técnica de concreto e asfalto." },
+                { name: "Placa Vibratória", desc: "Compactação de solos granulares." },
+                { name: "Cortadora de Piso", desc: "Cortes precisos com disco diamantado." },
+                { name: "Compactador", desc: "Impacto pesado para solos coesivos." },
+                { name: "Alisadora", desc: "Acabamento de alto nível em concreto." },
+                { name: "Furadeira Impacto", desc: "Perfuração técnica em alvenaria." },
+                { name: "Lixadeira", desc: "Preparação de superfícies industriais." },
+                { name: "Esmerilhadeira", desc: "Corte e desbaste profissional de metais." }
+              ].map((tool, i) => (
+                <motion.div 
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.05 }}
+                  viewport={{ once: true }}
+                  className="bg-zinc-900/50 border border-white/5 p-6 rounded-2xl hover:bg-zinc-900 group transition-all"
+                >
+                  <div className="w-10 h-10 bg-zinc-800 flex items-center justify-center mb-6 text-yellow-500 font-black rounded-lg group-hover:bg-yellow-500 group-hover:text-black transition-colors">
+                    {String(i + 1).padStart(2, '0')}
+                  </div>
+                  <h4 className="font-black uppercase italic mb-2 group-hover:text-yellow-500 transition-colors text-sm">{tool.name}</h4>
+                  <p className="text-zinc-500 text-[10px] uppercase font-bold leading-relaxed mb-6">{tool.desc}</p>
+                  <a 
+                    href={`https://wa.me/5511999408103?text=Olá! Gostaria de consultar o aluguel de: ${tool.name}`}
+                    className="text-[10px] font-black uppercase tracking-[.2em] text-zinc-400 group-hover:text-yellow-500 flex items-center gap-2"
+                  >
+                    Consultar <span>→</span>
+                  </a>
+                </motion.div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
       {/* History Section - Impactful Overlay */}
-      <section className="py-40 bg-zinc-900/30 relative overflow-hidden">
+      <section className="py-40 bg-zinc-900/30 relative overflow-hidden text-zinc-400 font-sans">
         <div className="absolute inset-0 opacity-5 select-none pointer-events-none flex items-center justify-center">
             <span className="text-[40vw] font-black leading-none">1986</span>
         </div>
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 font-sans">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <motion.div 
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-5xl lg:text-7xl font-black uppercase italic mb-10 leading-[0.9]">
+              <h2 className="text-5xl lg:text-7xl font-black uppercase italic mb-10 leading-[0.9] text-zinc-100">
                 TRADIÇÃO QUE <br/>
                 <span className="text-yellow-500">ERGE HISTÓRIAS.</span>
               </h2>
@@ -315,6 +357,70 @@ export default function Home() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section - Interactive Accordion */}
+      <section className="py-24 bg-zinc-950/50 border-y border-white/5 relative overflow-hidden">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl lg:text-6xl font-black uppercase italic mb-6">DÚVIDAS <span className="text-yellow-500">FREQUENTES</span></h2>
+            <p className="text-zinc-500 font-bold uppercase tracking-widest text-[10px]">Transparência e agilidade para sua obra não parar</p>
+          </motion.div>
+
+          <div className="space-y-4">
+            {[
+              { 
+                q: "Quanto tempo leva a entrega após o fechamento?", 
+                a: "Nossa logística em Atibaia é otimizada para rapidez. Dependendo da disponibilidade e localização (como Bairro da Ponte), conseguimos realizar a entrega no mesmo dia para garantir o cumprimento do seu cronograma." 
+              },
+              { 
+                q: "O que acontece se o equipamento apresentar defeito?", 
+                a: "Oferecemos assistência prioritária. Caso ocorra qualquer falha técnica, nossa equipe vai até a obra em tempo recorde. Se o reparo imediato não for possível, realizamos a substituição do equipamento sem custo adicional." 
+              },
+              { 
+                q: "Qual o prazo mínimo de locação?", 
+                a: "Trabalhamos com flexibilidade total: diário, semanal, quinzenal e mensal. Adaptamos o contrato à necessidade real do seu projeto, com condições diferenciadas para longas durações." 
+              },
+              { 
+                q: "Vocês trabalham com equipamentos além de betoneiras?", 
+                a: "Sim. Nosso catálogo de elite inclui rompedores de diversas potências, placas vibratórias, compactadores de solo, andaimes tubulares e diversas ferramentas elétricas profissionais." 
+              },
+              { 
+                q: "Quais as formas de pagamento aceitas?", 
+                a: "Facilitamos o processo para você focar na obra: aceitamos faturamento para empresas (sujeito a análise), PIX, cartões de crédito e débito." 
+              }
+            ].map((item, i) => (
+              <div key={i} className="glass-card rounded-2xl overflow-hidden group">
+                <button 
+                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                  className="w-full px-8 py-6 flex items-center justify-between text-left hover:bg-white/[0.02] transition-colors"
+                >
+                  <span className="font-black uppercase italic text-sm tracking-wide group-hover:text-yellow-500 transition-colors">{item.q}</span>
+                  <ChevronDown className={`text-yellow-500 transition-transform duration-500 ${openFaq === i ? 'rotate-180' : ''}`} size={20} />
+                </button>
+                <AnimatePresence>
+                  {openFaq === i && (
+                    <motion.div 
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: 'easeOut' as const }}
+                    >
+                      <div className="px-8 pb-8 text-zinc-400 text-sm leading-relaxed border-t border-white/[0.05] pt-6 font-medium">
+                        {item.a}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            ))}
           </div>
         </div>
       </section>
