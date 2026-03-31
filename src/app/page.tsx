@@ -35,7 +35,7 @@ export default function Home() {
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" as const } }
   };
 
   return (
@@ -126,7 +126,7 @@ export default function Home() {
             <motion.div 
               initial={{ opacity: 0, scale: 0.9, rotateY: 20 }}
               whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
-              transition={{ duration: 1, ease: "easeOut" }}
+              transition={{ duration: 1, ease: "easeOut" as const }}
               className="relative perspective-1000"
             >
               <div className="aspect-[4/5] md:aspect-square bg-zinc-900 rounded-[2.5rem] relative overflow-hidden group border border-white/5 shadow-2xl">
