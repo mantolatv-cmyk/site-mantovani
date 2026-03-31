@@ -9,6 +9,10 @@ const outfit = Outfit({
   display: 'swap',
 });
 
+export const viewport = {
+  themeColor: "#FFC107",
+};
+
 export const metadata: Metadata = {
   title: "Aluguel de Betoneiras em Atibaia | Betoneiras Mantovani",
   description: "Locação de betoneiras, andaimes e equipamentos para construção civil em Atibaia. Entrega rápida, máquinas revisadas e o melhor preço da região. Solicite seu orçamento!",
@@ -42,7 +46,6 @@ export const metadata: Metadata = {
     follow: true,
   },
   manifest: "/manifest.json",
-  themeColor: "#FFC107",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
@@ -52,6 +55,7 @@ export const metadata: Metadata = {
     canonical: "https://mantovani-locacao.vercel.app/",
   }
 };
+
 
 export default function RootLayout({
   children,

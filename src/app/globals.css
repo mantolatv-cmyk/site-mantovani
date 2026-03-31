@@ -4,8 +4,8 @@
 
 :root {
   --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 10, 10, 10; /* Novo Zinc-900 (Preto bem escuro) */
-  --background-end-rgb: 0, 0, 0;      /* Novo Zinc-950 (Preto absoluto) */
+  --background-start-rgb: 5, 5, 5;
+  --background-end-rgb: 0, 0, 0;
 }
 
 body {
@@ -21,23 +21,59 @@ body {
 @layer base {
   html {
     -webkit-tap-highlight-color: transparent;
+    scroll-behavior: smooth;
   }
 }
 
-/* Estilo para fundo com textura de ruído (Grain/Noise) */
+/* Glassmorphism & Effects */
+@layer components {
+  .glass-nav {
+    @apply bg-black/40 backdrop-blur-xl border-b border-white/5 saturate-[1.8];
+  }
+  
+  .glass-card {
+    @apply bg-zinc-900/40 backdrop-blur-md border border-white/10 hover:border-yellow-500/30 transition-all duration-500;
+  }
+
+  .glow-card {
+    @apply relative overflow-hidden;
+  }
+
+  .glow-card::after {
+    content: '';
+    @apply absolute inset-0 opacity-0 transition-opacity duration-500 pointer-events-none;
+    background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y), rgba(234, 179, 8, 0.1), transparent 40%);
+  }
+
+  .glow-card:hover::after {
+    @apply opacity-100;
+  }
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
+
+/* Textures Refinements */
 .bg-noise {
   background-image: url("https://grainy-gradients.vercel.app/noise.svg");
   background-repeat: repeat;
-  opacity: 0.05;
+  opacity: 0.04;
   pointer-events: none;
   position: absolute;
   inset: 0;
-  z-index: 1; /* Acima da chapa de metal */
+  z-index: 1;
 }
 
-/* Textura de Chapa de Metal (Diamond Plate) */
 .bg-metal-plate {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M20 0 L40 20 L20 40 L0 20 Z M60 40 L80 60 L60 80 L40 60 Z'/%3E%3Cpath fill-opacity='0.01' d='M60 0 L80 20 L60 40 L40 20 Z M20 40 L40 60 L20 80 L0 60 Z'/%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23ffffff' fill-opacity='0.012'%3E%3Cpath d='M20 0 L40 20 L20 40 L0 20 Z M60 40 L80 60 L60 80 L40 60 Z'/%3E%3Cpath fill-opacity='0.008' d='M60 0 L80 20 L60 40 L40 20 Z M20 40 L40 60 L20 80 L0 60 Z'/%3E%3C/g%3E%3C/svg%3E");
   background-repeat: repeat;
   background-attachment: fixed;
   position: absolute;
@@ -50,19 +86,31 @@ body {
   width: 100%;
   height: 100%;
   background: 
-    radial-gradient(circle at 0% 0%, rgba(234, 179, 8, 0.03) 0%, transparent 50%),
-    radial-gradient(circle at 100% 100%, rgba(234, 179, 8, 0.03) 0%, transparent 50%);
+    radial-gradient(circle at 10% 20%, rgba(234, 179, 8, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(217, 119, 6, 0.04) 0%, transparent 40%);
   pointer-events: none;
   z-index: 0;
 }
 
-/* Custom transitions for a premium feel */
-.transition-all-custom {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
+/* Custom utilities */
 @layer utilities {
   .text-glow-yellow {
-    text-shadow: 0 0 20px rgba(234, 179, 8, 0.3);
+    text-shadow: 0 0 30px rgba(234, 179, 8, 0.4);
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse-slow 4s ease-in-out infinite;
+  }
+  
+  .transition-all-custom {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .mask-radial {
+    mask-image: radial-gradient(circle at center, black, transparent 80%);
   }
 }
