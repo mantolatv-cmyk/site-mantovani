@@ -10,7 +10,8 @@ export default function Home() {
   const [submitted, setSubmitted] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const { scrollY } = useScroll();
-  const navOpacity = useTransform(scrollY, [0, 100], [0, 1]);
+  const navOpacity = useTransform(scrollY, [0, 50], [1, 1]); // Always visible, but can be adjusted if needed
+  const navBgOpacity = useTransform(scrollY, [0, 100], [0, 1]); // Control background separately if needed
   const navScale = useTransform(scrollY, [0, 100], [1, 0.98]);
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -49,7 +50,10 @@ export default function Home() {
 
       {/* Header/Nav */}
       <motion.nav 
-        style={{ opacity: navOpacity, scale: navScale }}
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8, ease: "easeOut" as const }}
+        style={{ scale: navScale }}
         className="glass-nav sticky top-4 mx-4 md:mx-auto max-w-5xl z-[100] rounded-2xl transition-all duration-300"
       >
         <div className="px-6 h-16 flex items-center justify-between">
